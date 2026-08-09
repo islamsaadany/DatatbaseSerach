@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Directory</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Team Directory</span>
+    <div class="spacer"></div>
+    <span class="whoami" id="whoami"></span>
+    <a class="btn small secondary" id="admin-link" href="/admin.html" style="display:none">Admin</a>
+    <button class="btn small secondary" id="logout">Sign out</button>
+  </div>
+
+  <div class="container">
+    <h1>Team Search</h1>
+    <p class="subtitle" id="role-note">Search team members by name.</p>
+
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input type="text" id="search" placeholder="Search..." autocomplete="off" />
+    </div>
+
+    <form class="add-form" id="add-form" style="display:none">
+      <input type="text" id="new-name" placeholder="Full name" autocomplete="off" required />
+      <input type="text" id="new-title" placeholder="Title (optional)" autocomplete="off" />
+      <input type="tel" id="new-phone" placeholder="Phone (admin only)" autocomplete="off" />
+      <button type="submit" class="btn">Add member</button>
+    </form>
+
+    <div class="results" id="results"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · Team Directory</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Team Directory · Admin</span>
+    <div class="spacer"></div>
+    <span class="whoami" id="whoami"></span>
+    <a class="btn small secondary" href="/index.html">Directory</a>
+    <button class="btn small secondary" id="logout">Sign out</button>
+  </div>
+
+  <div class="container">
+    <h1>Admin — Access Management</h1>
+    <p class="subtitle">Create users, assign roles, reset passwords, and manage access.</p>
+
+    <div class="panel-block">
+      <h2>Add a user</h2>
+      <div class="error" id="create-error"></div>
+      <form id="create-form">
+        <div class="grid-2">
+          <div>
+            <label for="c-username">Username</label>
+            <input type="text" id="c-username" autocomplete="off" required />
+          </div>
+          <div>
+            <label for="c-role">Role</label>
+            <select id="c-role">
+              <option value="viewer">Viewer — read-only, no sensitive fields</option>
+              <option value="member">Member — add/edit, no sensitive fields</option>
+              <option value="admin">Admin — full access + this panel</option>
+            </select>
+          </div>
+          <div>
+            <label for="c-password">Temporary password</label>
+            <input type="password" id="c-password" autocomplete="new-password" required />
+          </div>
+          <div style="display:flex; align-items:flex-end">
+            <button type="submit" class="btn" style="width:100%">Create user</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel-block">
+      <h2>Users</h2>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr><th>Username</th><th>Role</th><th>Status</th><th>Created</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/admin.js"></script>
+</body>
+</html>

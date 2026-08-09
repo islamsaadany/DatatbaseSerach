@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in · Team Directory</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="login-wrap">
+    <form class="login-card" id="login-form">
+      <h1>Team Directory</h1>
+      <p class="subtitle">Sign in to continue.</p>
+      <div class="error" id="error"></div>
+      <div class="field-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" autocomplete="username" required />
+      </div>
+      <div class="field-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required />
+      </div>
+      <button type="submit" class="btn" style="width:100%">Sign in</button>
+      <p class="notice">Access is role-based. Contact an admin if you need an account.</p>
+    </form>
+  </div>
+  <script src="/login.js"></script>
+</body>
+</html>
