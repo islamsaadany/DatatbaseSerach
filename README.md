@@ -7,7 +7,13 @@ A simple, self-contained search app for looking up team members by **name** or *
 Open `index.html` in any web browser. No build step or server required.
 
 - Type in the search box to filter by name or phone.
+- Use the **Add** form to add a new member (name + phone).
+- Click the **trash icon** on a card to delete a member.
 - Click **Call** to dial a member directly (on supported devices).
+
+Added and deleted members are saved in your browser (localStorage), so
+changes persist across reloads. Clearing browser data resets the list
+back to the sample members.
 
 ## Team data
 
